@@ -1,6 +1,8 @@
 package test.com.zhk.List; 
 
-import org.junit.Test; 
+import com.zhk.List.ListNode;
+import com.zhk.List.ReverseList;
+import org.junit.Test;
 import org.junit.Before; 
 import org.junit.After; 
 
@@ -28,8 +30,33 @@ public void after() throws Exception {
 */ 
 @Test
 public void testReverseList() throws Exception { 
-//TODO: Test goes here... 
-} 
+//TODO: Test goes here...
+    ListNode l1 = new ListNode(1);
+    ListNode l2 = new ListNode(2);
+    ListNode l3 = new ListNode(3);
+    ListNode l4 = new ListNode(4);
+    ListNode l5 = new ListNode(5);
+    l1.next = l2;
+    l2.next = l3;
+    l3.next = l4;
+    l4.next = l5;
+    l5.next = null;
+    ListNode head = new ReverseList().reverseList2(l1);
+    System.out.println(listNodeToString(head));
+}
+
+    public static String listNodeToString(ListNode node) {
+        if (node == null) {
+            return "[]";
+        }
+
+        String result = "";
+        while (node != null) {
+            result += Integer.toString(node.val) + ", ";
+            node = node.next;
+        }
+        return "[" + result.substring(0, result.length() - 2) + "]";
+    }
 
 
 } 

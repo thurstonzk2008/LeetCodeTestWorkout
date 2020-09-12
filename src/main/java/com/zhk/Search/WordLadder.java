@@ -134,6 +134,6 @@ public class WordLadder {
         hs.add("lot");
         hs.add("log");
         hs.add("cog");
-        int res = wl.ladderLength("hit","cog",hs);
+ //       int res = wl.ladderLength("hit","cog",hs);
     }
 }
